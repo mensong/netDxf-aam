@@ -1,0 +1,9 @@
+/.vs
+/TestDxfDocument/.vs
+/TestDxfDocument/bin
+/TestDxfDocument/obj
+/netDxf/.vs
+/netDxf/obj
+/netDxf/bin
+/netDxf-aam/bin
+/netDxf-aam/obj
