@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{785380E0-CEB9-4C34-82E5-60D0E33E848E}</ProjectGuid>
+    <ProjectGuid>{EDEB9084-ED8D-405A-935E-47C11F8A7D65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>netDxf.aam</RootNamespace>
