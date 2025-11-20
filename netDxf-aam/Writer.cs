@@ -1769,14 +1769,36 @@ namespace netDxf.aam
         private void WriteCodePair(int codigo, object valor)
         {
             // AutoCad12 does not allow strings with spaces
-            string nameConversion = valor == null ? string.Empty : valor.ToString();
+            
+            string nameConversion = string.Empty;
+            if (valor is double)
+            {
+                nameConversion = DoubleToStringWithMinOneDecimal((double)valor);
+            }
+            else if (valor != null)
+            {
+                nameConversion = valor.ToString();
+            }
 
-            if (this.version == DxfVersion.AutoCad12 && valor is DxfObject) 
+            if (this.version == DxfVersion.AutoCad12 && valor is DxfObject)
                 nameConversion = nameConversion.Replace(' ', '_');
 
             string strCode = codigo.ToString().PadLeft(3, ' ');
             this.writer.WriteLine(strCode);
             this.writer.WriteLine(nameConversion);
+        }
+
+        private string DoubleToStringWithMinOneDecimal(double value)
+        {
+            // 检查是否为整数（没有小数部分）
+            if (value % 1 == 0)
+            {
+                return value.ToString("F1");  // 至少保留一位小数
+            }
+            else
+            {
+                return value.ToString();      // 保持原有小数位数
+            }
         }
 
         #endregion
